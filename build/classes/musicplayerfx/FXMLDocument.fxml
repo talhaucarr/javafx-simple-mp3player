@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="654.0" prefWidth="739.0" style="-fx-background-radius: 0.2em; -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicplayerfx.FXMLDocumentController">
+   <children>
+      <AnchorPane layoutY="-1.0" onKeyPressed="#keydeneme" prefHeight="655.0" prefWidth="431.0" style="-fx-background-color: #383e42; -fx-background-radius: 0.5em;">
+         <children>
+            <Pane layoutY="444.0" prefHeight="211.0" prefWidth="439.0" style="-fx-background-radius: 0.5em;" styleClass="linear-grad-to-bottom" stylesheets="@style.css">
+               <children>
+                  <JFXButton fx:id="btn_play" accessibleRole="LIST_VIEW" layoutX="189.0" layoutY="75.0" onMouseClicked="#playBtn" prefHeight="59.0" prefWidth="62.0" stylesheets="@style.css" textFill="#fcfcfc">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="PLAY" size="40" styleClass="button" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="271.0" layoutY="76.0" onMouseClicked="#nextBtn" prefHeight="50.0" prefWidth="68.0" textFill="#fff8f8">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CHEVRON_RIGHT" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="111.0" layoutY="76.0" onMouseClicked="#prevBtn" prefHeight="50.0" prefWidth="68.0" textFill="#fffefe">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CHEVRON_LEFT" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="43.0" layoutY="80.0" onMouseClicked="#repeatBtn" prefHeight="50.0" prefWidth="68.0" textFill="WHITE" visible="false">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CLOUD" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="186.0" layoutY="134.0" onMouseClicked="#queueBtn" prefHeight="50.0" prefWidth="68.0" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="REPEAT" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_pause" accessibleRole="LIST_VIEW" layoutX="189.0" layoutY="75.0" onMouseClicked="#pauseBtn" prefHeight="59.0" prefWidth="62.0" stylesheets="@style.css" textFill="#fcfcfc" visible="false">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="PAUSE" size="40" styleClass="button" />
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="current" layoutX="14.0" layoutY="-8.0" text="Label" textFill="WHITE" visible="false" />
+               </children>
+            </Pane>
+            <MaterialDesignIconView fill="#99aab5" glyphName="TERRAIN" layoutX="153.0" layoutY="262.0" size="125" />
+            <Pane prefHeight="40.0" prefWidth="438.0" style="-fx-background-radius: 0.5em;" stylesheets="@style.css">
+               <children>
+                  <JFXButton fx:id="btnn_settings" layoutX="14.0" layoutY="6.0" onMouseClicked="#handleButtonAction" prefHeight="28.0" prefWidth="25.0" stylesheets="@style.css" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fx:id="btn_settings" fill="WHITE" glyphName="VIEW_HEADLINE" onMouseClicked="#handleButtonAction" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnn_close" layoutX="390.0" layoutY="6.0" onMouseClicked="#handleButtonAction" prefHeight="28.0" prefWidth="37.0" stylesheets="@style.css" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fx:id="btn_close" fill="WHITE" glyphName="CLOSE" onMouseClicked="#handleButtonAction" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Label fx:id="nowPlayingSong" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="405.0" prefHeight="25.0" prefWidth="225.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="13.0" />
+               </font>
+            </Label>
+            <JFXProgressBar fx:id="progressBar" layoutY="447.0" prefHeight="2.0" prefWidth="439.0" progress="0.5" visible="false" />
+            <JFXButton fx:id="btn_volm_mute" layoutX="7.0" layoutY="120.0" onMouseClicked="#volumeMuteBtn" prefHeight="33.0" prefWidth="52.0" stylesheets="@style.css" textFill="WHITE" visible="false">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VOLUME_OFF" size="25" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_volm_down" layoutX="14.0" layoutY="87.0" onMouseClicked="#volumeDownBtn" prefHeight="25.0" prefWidth="25.0" stylesheets="@style.css" textFill="WHITE" visible="false">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VOLUME_LOW" size="25" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_volm_up" layoutX="14.0" layoutY="54.0" onMouseClicked="#volumeUpBtn" prefHeight="25.0" prefWidth="20.0" stylesheets="@style.css" textFill="#fffefe" visible="false">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VOLUME_HIGH" size="25" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="timeTotal" layoutX="400.0" layoutY="423.0" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeTotall" layoutX="205.0" layoutY="436.0" textFill="#ebebeb" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_settings" layoutX="446.0" onKeyReleased="#keydeneme" onMouseClicked="#handleButtonAction" prefHeight="655.0" prefWidth="246.0" style="-fx-background-radius: 0.5em; -fx-background-color: #383e42;" visible="false">
+         <children>
+            <Pane layoutY="-1.0" prefHeight="40.0" prefWidth="246.0" style="-fx-background-radius: 0.5em;" stylesheets="@style.css">
+               <children>
+                  <Label layoutX="24.0" layoutY="4.0" prefHeight="25.0" prefWidth="99.0" text="xKral_TR" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnn_close_settings" layoutX="208.0" layoutY="5.0" onMouseClicked="#handleButtonAction" prefHeight="28.0" prefWidth="3.0" stylesheets="@style.css">
+                     <graphic>
+                        <MaterialDesignIconView fx:id="btn_close_settings" fill="WHITE" glyphName="CLOSE" onMouseClicked="#handleButtonAction" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <JFXListView fx:id="playList" layoutX="22.0" layoutY="67.0" onMouseClicked="#displaySelected" prefHeight="519.0" prefWidth="198.0" stylesheets="@style.css" />
+            <Pane layoutY="444.0" prefHeight="211.0" prefWidth="246.0" style="-fx-background-radius: 0.5em;" styleClass="linear-grad-to-bottom" stylesheets="@style.css">
+               <children>
+                  <JFXButton layoutX="157.0" layoutY="155.0" onMouseClicked="#deleteBtn" prefHeight="33.0" prefWidth="33.0" stylesheets="@style.css">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="DELETE" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="123.0" layoutY="155.0" prefHeight="33.0" prefWidth="25.0" stylesheets="@style.css">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="PLUS" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="50.0" layoutY="155.0" onAction="#folderBtn" onMouseClicked="#folderBtn" prefHeight="33.0" prefWidth="28.0" stylesheets="@style.css">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="FOLDER" size="25" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

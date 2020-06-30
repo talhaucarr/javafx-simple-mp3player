@@ -1,0 +1,38 @@
+.linear-grad-to-bottom{
+    -fx-background-color: linear-gradient(to bottom,  #383e42, #b19870);
+}
+.linear-grad-to-top{
+    -fx-background-color: linear-gradient(to bottom,   #b19870,#383e42);
+}
+
+.list-view {
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #434343;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #434343;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.list-view .label {
+    -fx-text-fill: white;
+}
+
+.jfx-rippler {
+    -jfx-rippler-fill: #7289da;
+}
+.button{
+   -fx-background-color:transparent; 
+}
+.button:hover{
+    -fx-background-color: linear-gradient(to bottom,   #383e42,#b19870); 
+    
+}
